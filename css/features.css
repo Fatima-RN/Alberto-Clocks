@@ -1,0 +1,388 @@
+/* New features: wishlist, stock, ratings, price slider, loading cards,
+   world time, coupon, checkout, order history, reviews */
+
+/* ---------- loading placeholders ---------- */
+.skeleton-card {
+  aspect-ratio: 1 / 1;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background-color: var(--card);
+  background-image: linear-gradient(
+    100deg,
+    transparent 30%,
+    rgba(var(--led-rgb), 0.12) 50%,
+    transparent 70%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 150% 0;
+  }
+
+  to {
+    background-position: -50% 0;
+  }
+}
+
+/* ---------- wishlist heart ---------- */
+.heart-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    background 0.2s;
+}
+
+.heart-btn:hover {
+  background: rgba(0, 0, 0, 0.75);
+  transform: scale(1.12);
+}
+
+.heart-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.heart-btn.on {
+  color: var(--red);
+}
+
+.heart-btn.on svg {
+  fill: currentColor;
+}
+
+.heart-btn.inline {
+  position: static;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+}
+
+.heart-btn.inline.on {
+  color: var(--red);
+}
+
+.wish-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.wish-item .pimg,
+.wish-item svg {
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* ---------- stock badge + rating line on cards ---------- */
+.stock-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 3;
+  padding: 3px 10px;
+  border-radius: 99px;
+  background: var(--amber);
+  color: #1a1200;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.stock-badge.out {
+  background: var(--red);
+  color: #fff;
+}
+
+.rating-line {
+  margin: 0 0.5rem 0.1rem;
+  color: #ffd06a;
+  font-size: 0.8rem;
+}
+
+.stars {
+  color: var(--amber);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.stars .off {
+  opacity: 0.3;
+}
+
+/* ---------- price slider ---------- */
+.price-filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  max-width: 440px;
+  margin: 1rem auto;
+  padding: 0 0.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.price-filter input[type="range"] {
+  flex: 1;
+  accent-color: var(--amber);
+}
+
+.price-filter output {
+  min-width: 130px;
+  color: var(--ink);
+  font-weight: 700;
+  text-align: right;
+}
+
+/* ---------- world time strip ---------- */
+.world-time {
+  padding: 28px 0;
+  border-block: 1px solid var(--line);
+  background: var(--tint);
+}
+
+.world-time h2 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.world-card {
+  height: 100%;
+  padding: 0.9rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--card);
+  text-align: center;
+}
+
+.world-card .city {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.world-card .wtime {
+  margin: 0.25rem 0 0;
+  color: var(--accent);
+  font-family: "DSEG7", "Share Tech Mono", monospace;
+  font-size: clamp(1.1rem, 3.4vw, 1.7rem);
+  letter-spacing: 0.04em;
+}
+
+.world-card .wday {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+/* ---------- coupon ---------- */
+.coupon-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.coupon-note {
+  min-height: 1.2rem;
+  margin: 0 0 0.5rem;
+  font-size: 0.78rem;
+}
+
+.coupon-note.ok {
+  color: var(--green);
+}
+
+.coupon-note.bad {
+  color: var(--red);
+}
+
+.sum-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.sum-row.disc {
+  color: var(--green);
+}
+
+.sum-row.total {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+/* ---------- checkout ---------- */
+.pay-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.pay-option:has(input:checked) {
+  border-color: var(--amber);
+  background: rgba(var(--led-rgb), 0.08);
+}
+
+.pay-option small {
+  display: block;
+  color: var(--muted);
+}
+
+.checkout-lines {
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  font-size: 0.88rem;
+}
+
+.checkout-lines li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 4px 0;
+  border-bottom: 1px dashed var(--line);
+}
+
+/* ---------- order history ---------- */
+.order-card {
+  margin-bottom: 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.order-card summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem 1rem;
+  padding: 0.7rem 0.9rem;
+  cursor: pointer;
+}
+
+.order-body {
+  padding: 0 0.9rem 0.9rem;
+  font-size: 0.85rem;
+}
+
+.order-body ul {
+  margin: 0 0 0.6rem;
+  padding-left: 1.1rem;
+}
+
+.status-pill {
+  padding: 2px 10px;
+  border-radius: 99px;
+  background: var(--amber);
+  color: #1a1200;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.status-pill.done {
+  background: var(--green);
+  color: #04200d;
+}
+
+.timeline {
+  display: flex;
+  gap: 4px;
+  margin: 0.6rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline li {
+  flex: 1;
+  padding-top: 6px;
+  border-top: 4px solid var(--line);
+  color: var(--muted);
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.timeline li.on {
+  border-top-color: var(--green);
+  color: var(--ink);
+}
+
+/* ---------- reviews ---------- */
+.reviews {
+  margin-top: 3rem;
+}
+
+.review {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.review p {
+  margin: 0.25rem 0 0;
+}
+
+.review small {
+  color: var(--muted);
+}
+
+.star-input {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  gap: 2px;
+}
+
+.star-input input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.star-input label {
+  color: var(--line);
+  font-size: 1.7rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.star-input input:checked ~ label,
+.star-input label:hover,
+.star-input label:hover ~ label {
+  color: var(--amber);
+}
+
+.star-input input:focus-visible + label {
+  outline: 3px solid var(--amber);
+  outline-offset: 2px;
+}

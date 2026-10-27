@@ -1,0 +1,96 @@
+/* Cart panel, footer, back-to-top, small animations */
+/* cart & modal */
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+.cart-item svg {
+  width: 56px;
+  height: 56px;
+  flex: none;
+}
+.cart-item-info {
+  flex: 1;
+}
+.cart-qty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+.detail svg {
+  width: 100%;
+  max-width: 260px;
+}
+
+/* footer */
+.site-footer {
+  background: var(--tint);
+  border-top: 1px solid var(--line);
+  padding: 60px 0 24px;
+}
+.site-footer h4,
+.site-footer .footer-h {
+  font-size: 1.3rem;
+  color: var(--accent);
+}
+.site-footer a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.site-footer a:hover {
+  color: var(--red);
+}
+.site-footer p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.copy {
+  text-align: center;
+  margin: 2.5rem 0 0;
+  font-size: 0.8rem !important;
+}
+
+#topBtn {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--grad);
+  color: #1a1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 700;
+  z-index: 999;
+}
+
+/* page fade-in for products */
+#productGrid > div {
+  animation: fade 0.4s;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+    padding-left: 0;
+  }
+  #productGrid > div {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

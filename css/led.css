@@ -1,0 +1,141 @@
+/* LED digital clock look, LED ticker, cart badge */
+/* ---------- LED / digital look ---------- */
+@font-face {
+  font-family: "DSEG7";
+  src: url("../fonts/DSEG7Classic-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+.hero .live-clock {
+  position: relative;
+  display: inline-block;
+  margin: 1.6rem 0 0.8rem;
+  padding: 16px 32px;
+  background: #050505;
+  border: 2px solid #2b2b2b;
+  border-radius: 16px;
+  box-shadow:
+    0 0 0 5px #111,
+    0 0 46px rgba(var(--led-rgb), 0.22),
+    inset 0 0 24px #000;
+  font-family: "DSEG7", "Share Tech Mono", monospace;
+  font-size: clamp(2rem, 9vw, 4.6rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  color: var(--amber);
+  text-shadow:
+    0 0 6px rgba(var(--led-rgb), 0.9),
+    0 0 24px rgba(var(--led-rgb), 0.5);
+}
+.led-ghost {
+  position: absolute;
+  inset: 16px 32px;
+  color: rgba(var(--led-rgb), 0.07);
+  text-shadow: none;
+  pointer-events: none;
+}
+#liveClock i {
+  font-style: normal;
+  animation: ledBlink 1s steps(1) infinite;
+}
+@keyframes ledBlink {
+  50% {
+    opacity: 0.15;
+  }
+}
+.led-sub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1.6rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #cfc8b6;
+}
+.led {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.led-red {
+  background: var(--red);
+  box-shadow: 0 0 8px var(--red);
+}
+.led-amber {
+  background: var(--amber);
+  box-shadow: 0 0 8px var(--amber);
+}
+.led-green {
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green);
+}
+.led-sub #liveDate {
+  margin-left: 8px;
+}
+/* marquee strip as an LED ticker */
+.ticker {
+  background: #000;
+  color: var(--amber);
+  border-block: 1px solid #2a2000;
+  text-shadow: 0 0 8px rgba(var(--led-rgb), 0.65);
+}
+.hero .eyebrow {
+  color: var(--green);
+  text-shadow: 0 0 8px rgba(46, 230, 107, 0.5);
+}
+.badge.text-bg-success {
+  background-color: var(--green) !important;
+  color: #04200d !important;
+}
+.badge.text-bg-danger {
+  background-color: var(--red) !important;
+  color: #fff !important;
+}
+.text-danger {
+  color: var(--red) !important;
+}
+.toast-msg {
+  border-left: 4px solid var(--green);
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--amber);
+  box-shadow: 0 0 0 0.2rem rgba(var(--led-rgb), 0.25);
+}
+.feature h3,
+.panel h3,
+.site-footer h4,
+.site-footer .footer-h {
+  color: var(--accent);
+}
+a {
+  color: var(--accent);
+}
+
+/* ---------- cart icon badge ---------- */
+.cart-btn {
+  position: relative;
+  padding: 0.4rem 0.65rem;
+}
+.cart-count {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  min-width: 18px;
+  height: 18px;
+  margin: 0;
+  padding: 0 5px;
+  border-radius: 99px;
+  background: var(--red);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+}
+.cart-count[data-n="0"] {
+  display: none;
+}

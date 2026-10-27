@@ -1,0 +1,63 @@
+/* Tablet / phone adjustments */
+/* ---------- responsive ---------- */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    padding: 0.4rem 0;
+  }
+  .navbar .nav-link {
+    padding: 0.65rem 0;
+    border-top: 1px solid var(--line);
+  }
+}
+@media (max-width: 575.98px) {
+  .brand {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+  }
+  .visitors {
+    display: none;
+  }
+  .section {
+    padding: 56px 0;
+  }
+  .hero {
+    padding: 70px 0 60px;
+  }
+  .hero::before,
+  .hero::after {
+    width: 240px;
+    height: 240px;
+  }
+  .product-card {
+    padding: 1rem 0.5rem;
+  }
+  .product-card svg {
+    width: 92px;
+    height: 92px;
+  }
+  .product-card h5 {
+    font-size: 1.1rem;
+  }
+  .price {
+    font-size: 0.8rem;
+  }
+  .btn-grad.btn-sm {
+    padding-inline: 0.7rem;
+  }
+  .spec {
+    grid-template-columns: 90px 1fr;
+  }
+  .ticker {
+    font-size: 0.65rem;
+  }
+  .page-head {
+    padding: 36px 0 28px;
+  }
+}
+
+/* phones: the wide g-5 gutter pushed the About and Register rows 12px past the screen edge */
+@media (max-width: 575.98px) {
+  .row.g-5 {
+    --bs-gutter-x: 1.5rem;
+  }
+}

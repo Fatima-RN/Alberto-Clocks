@@ -1,0 +1,28 @@
+/* Hero background photo */
+/* ---------- hero background image ---------- */
+.hero,
+[data-bs-theme="dark"] .hero {
+  background:
+    linear-gradient(rgba(5, 5, 6, 0.78), rgba(5, 5, 6, 0.88)),
+    url("https://images.unsplash.com/photo-1629135458283-0c69f7cead37?auto=format&fit=crop&w=1600&q=80")
+      center / cover no-repeat,
+    url("../image/hero-bg.svg") center / cover no-repeat;
+  background-color: #0b0b0d;
+  color: #fff;
+}
+.hero::before,
+.hero::after {
+  display: none;
+}
+.hero h1 em,
+.hero .eyebrow {
+  color: var(--amber);
+}
+.hero .lead {
+  color: #e8e2d0;
+}
+.hero .live-clock {
+  background: rgba(15, 11, 36, 0.6);
+  border-color: var(--amber);
+  color: #fff;
+}

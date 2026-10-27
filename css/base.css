@@ -1,0 +1,79 @@
+/* Design tokens (colours), body and heading fonts */
+/* Optional offline fonts: drop these two files into the fonts/ folder (see fonts/README.txt).
+   If they are missing nothing breaks, the browser just uses the next font in the list. */
+@font-face {
+  font-family: "Manrope Offline";
+  src: url("../fonts/Manrope-Variable.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cormorant Offline";
+  src: url("../fonts/CormorantGaramond-SemiBold.woff2") format("woff2");
+  font-weight: 500 600;
+  font-display: swap;
+}
+
+/* headings take their colour from the page, like stock Bootstrap (not the blue Cerulean theme) */
+:root,
+[data-bs-theme] {
+  --bs-heading-color: inherit;
+}
+
+/* LED palette: red, amber and green on dark surfaces */
+:root {
+  --amber: #ffb000;
+  --red: #ff3b30;
+  --green: #2ee66b;
+  --ink: #1b1712;
+  --muted: #6b6558;
+  --accent: #b45309;
+  --bg: #faf7f2;
+  --tint: #f2ede3;
+  --card: #ffffff;
+  --line: #e6dfd0;
+  --grad: linear-gradient(90deg, #ffb000, #ff3b30);
+}
+[data-bs-theme="dark"] {
+  --ink: #f4efe6;
+  --muted: #a39d8f;
+  --accent: #ffb000;
+  --bg: #0b0b0d;
+  --tint: #121215;
+  --card: #1a1a1e;
+  --line: #2e2e35;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family:
+    "Manrope",
+    "Manrope Offline",
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    Arial,
+    sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+h1,
+h2,
+h3,
+h4,
+.brand,
+.live-clock {
+  font-family: "Cormorant Garamond", "Cormorant Offline", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+}
+section {
+  scroll-margin-top: 70px;
+}
+a {
+  color: var(--accent);
+}

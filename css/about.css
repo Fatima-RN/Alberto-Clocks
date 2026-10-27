@@ -1,0 +1,32 @@
+/* About section photos */
+/* ---------- about photos ---------- */
+.photo-stack {
+  position: relative;
+  padding-bottom: 60px;
+}
+.photo-main {
+  width: 88%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+.photo-small {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 46%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 5px solid var(--bg);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+@media (max-width: 575.98px) {
+  .photo-main {
+    height: 240px;
+  }
+  .photo-small {
+    height: 120px;
+  }
+}

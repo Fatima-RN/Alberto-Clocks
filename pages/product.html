@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product details - Alberto Clocks</title>
+    <meta name="description" content="Details, price and reviews for this Alberto Clocks clock." />
+    <meta name="theme-color" content="#0b0b0d" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Alberto Clocks" />
+    <meta property="og:title" content="Product details - Alberto Clocks" />
+    <meta property="og:description" content="Details, price and reviews for this Alberto Clocks clock." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1629135458283-0c69f7cead37?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" />
+    <link rel="icon" type="image/svg+xml" href="../image/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      onerror="this.onerror=null;this.href='../css/bootstrap.min.css'"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,600&family=Manrope:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <noscript><p class="text-center p-3 mb-0">Please turn on JavaScript to browse the clocks.</p></noscript>
+    <header class="site-header sticky-top">
+      <nav class="navbar navbar-expand-lg" aria-label="Main">
+        <div class="container">
+          <a class="brand" href="../index.html">Alberto Clocks</a>
+          <span class="visitors" title="Visitors">Visitors <b class="visit-count">0</b></span>
+          <div class="collapse navbar-collapse justify-content-center order-3 order-lg-0" id="nav">
+            <ul class="navbar-nav gap-lg-1">
+            <li class="nav-item"><a class="nav-link" data-key="home" href="../index.html#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" data-key="products" href="../index.html#products" aria-current="true">Product</a></li>
+            <li class="nav-item"><a class="nav-link" data-key="technology" href="../index.html#technology">Technology</a></li>
+            <li class="nav-item"><a class="nav-link" data-key="store-locator" href="../index.html#store-locator">Store Locator</a></li>
+            <li class="nav-item"><a class="nav-link" data-key="support" href="../index.html#support">Support</a></li>
+            <li class="nav-item"><a class="nav-link" data-key="register" href="../index.html#register">Register</a></li>
+            </ul>
+          </div>
+          <div class="d-flex align-items-center gap-2 ms-auto">
+            <label class="theme-switch" title="Dark / light mode"><input type="checkbox" id="themeToggle" aria-label="Toggle dark mode" /><span class="track"><span class="knob">
+              <svg class="i-sun" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5" stroke="none"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" fill="none"/></svg>
+              <svg class="i-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
+            </span></span></label>
+            <div id="userArea"></div>
+            <button class="btn btn-grad btn-sm cart-btn" data-bs-toggle="offcanvas" data-bs-target="#wishPanel" aria-label="Open wishlist">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.7 4.5 6.4 4.5c2 0 3.5 1.1 4.3 2.4h.6c.8-1.3 2.3-2.4 4.3-2.4 3.7 0 5.5 3.9 4 7.3C19.5 16.4 12 21 12 21z"/></svg>
+              <span class="cart-count" data-count="wish" data-n="0">0</span></button>
+            <button class="btn btn-grad btn-sm cart-btn" data-bs-toggle="offcanvas" data-bs-target="#cartPanel" aria-label="Open cart">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 3.5h3l2.2 10.8a1 1 0 0 0 1 .8h8.6a1 1 0 0 0 1-.8L20 7H6"/><circle cx="9.5" cy="19.5" r="1.6"/><circle cx="17" cy="19.5" r="1.6"/></svg>
+              <span class="cart-count" data-count="cart" data-n="0">0</span></button>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav" aria-label="Menu" aria-controls="nav"><span class="navbar-toggler-icon"></span></button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
+    <main id="main" tabindex="-1">
+      <div class="page-head slim">
+        <div class="container">
+          <nav class="crumbs" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a> &rsaquo;
+            <a href="../index.html#products">Products</a> &rsaquo;
+            <span id="crumbName">Details</span>
+          </nav>
+        </div>
+      </div>
+      <section class="section pt-4">
+        <div class="container" id="detail" aria-busy="true"></div>
+      </section>
+      <section class="section tint" id="relatedSec" hidden>
+        <div class="container">
+          <h2 class="section-title text-center">You may also like</h2>
+          <div class="row g-3 g-md-4" id="related"></div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-6 col-lg-3"><h2 class="footer-h">Site map</h2><ul class="list-unstyled mb-0"><li><a href="../index.html#home">Home</a></li><li><a href="../index.html#products">Product</a></li><li><a href="../index.html#technology">Technology</a></li><li><a href="../index.html#store-locator">Store Locator</a></li><li><a href="../index.html#support">Support</a></li><li><a href="../index.html#register">Register</a></li></ul></div>
+          <div class="col-6 col-lg-3"><h2 class="footer-h">Hours</h2><p class="mb-0">Mon - Sat: 10am - 9pm<br />Sunday: Closed</p></div>
+          <div class="col-6 col-lg-3"><h2 class="footer-h">Store</h2><p class="mb-0">Alberto Clocks<br />Karachi, Pakistan<br />info@albertoclocks.com</p></div>
+          <div class="col-6 col-lg-3"><h2 class="footer-h">Newsletter</h2>
+            <form id="newsForm" class="d-flex gap-2"><input type="email" class="form-control form-control-sm" placeholder="Your email" aria-label="Your email" autocomplete="email" required /><button class="btn btn-grad btn-sm">Join</button></form></div>
+        </div>
+        <p class="copy">&copy; 2026 Alberto Clocks | Aptech E-Project | Visitors: <span class="visit-count">0</span></p>
+      </div>
+    </footer>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartPanel" aria-labelledby="cartTitle">
+      <div class="offcanvas-header"><h2 class="offcanvas-title fs-5" id="cartTitle">Your cart</h2><button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button></div>
+      <div class="offcanvas-body d-flex flex-column">
+        <div id="cartItems" class="flex-grow-1"></div>
+        <div id="netNotice" class="alert alert-warning small py-2" role="alert" hidden>You are offline. You can keep adding clocks, but you need an Internet connection to check out.</div>
+        <div class="border-top pt-3">
+          <form id="couponForm" class="coupon-row">
+            <label class="visually-hidden" for="couponInput">Coupon code</label>
+            <input id="couponInput" class="form-control form-control-sm" placeholder="Coupon code (try TIME10)" autocomplete="off" />
+            <button class="btn btn-outline-secondary btn-sm">Apply</button>
+          </form>
+          <p id="couponNote" class="coupon-note" role="status"></p>
+          <div id="cartTotals" class="mb-3"></div>
+          <div class="d-flex gap-2"><button id="clearBtn" class="btn btn-outline-secondary">Clear</button><button id="checkoutBtn" class="btn btn-grad flex-grow-1">Checkout</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="wishPanel" aria-labelledby="wishTitle">
+      <div class="offcanvas-header"><h2 class="offcanvas-title fs-5" id="wishTitle">Your wishlist</h2><button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button></div>
+      <div class="offcanvas-body" id="wishItems"></div>
+    </div>
+
+    <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"><div class="modal-content">
+      <div class="modal-header"><h2 class="modal-title fs-5" id="checkoutTitle">Checkout</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+      <div class="modal-body">
+        <div id="checkoutFormWrap">
+          <form id="checkoutForm">
+            <div class="row g-3">
+              <div class="col-md-6"><label class="form-label" for="coName">Full name</label><input id="coName" name="name" class="form-control" autocomplete="name" required /></div>
+              <div class="col-md-6"><label class="form-label" for="coPhone">Phone</label><input id="coPhone" name="phone" type="tel" class="form-control" autocomplete="tel" placeholder="0300 1234567" required /></div>
+              <div id="addressFields" class="col-12"><div class="row g-3">
+                <div class="col-md-8"><label class="form-label" for="coAddress">Delivery address</label><input id="coAddress" name="address" class="form-control" autocomplete="street-address" required /></div>
+                <div class="col-md-4"><label class="form-label" for="coCity">City</label><input id="coCity" name="city" class="form-control" autocomplete="address-level2" required /></div>
+              </div></div>
+              <div class="col-12"><label class="form-label" for="coNote">Note for us (optional)</label><textarea id="coNote" name="note" class="form-control" rows="2" maxlength="200"></textarea></div>
+              <fieldset class="col-12"><legend class="form-label">Payment</legend>
+                <div class="d-grid gap-2">
+                  <label class="pay-option"><input type="radio" name="payment" value="cod" checked /><span>Cash on delivery<small>Pay the rider when the clock arrives.</small></span></label>
+                  <label class="pay-option"><input type="radio" name="payment" value="pickup" /><span>Pick up from the showroom<small>Pay at our Karachi store. No delivery address needed.</small></span></label>
+                </div>
+              </fieldset>
+              <div class="col-12"><h3 class="fs-6">Your order</h3><ul id="coLines" class="checkout-lines"></ul><div id="coTotals"></div></div>
+              <div class="col-12"><p id="checkoutError" class="text-danger small mb-0" role="alert" hidden></p></div>
+              <div class="col-12"><button class="btn btn-grad w-100">Place order</button></div>
+            </div>
+          </form>
+        </div>
+        <div id="checkoutDone" class="text-center py-4" hidden>
+          <h3 class="fs-4">Thank you!</h3>
+          <p id="doneText"></p>
+          <div class="d-flex gap-2 justify-content-center"><a href="#" class="btn btn-grad" data-profile>See my orders</a><button class="btn btn-outline-secondary" data-bs-dismiss="modal">Keep shopping</button></div>
+        </div>
+      </div>
+    </div></div></div>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+      <div class="modal-header"><h2 class="modal-title fs-5" id="loginTitle">Welcome to Alberto Clocks</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+      <div class="modal-body">
+        <ul class="nav nav-pills auth-tabs mb-3">
+          <li class="nav-item"><button type="button" class="nav-link active" data-bs-toggle="pill" data-bs-target="#tabIn">Login</button></li>
+          <li class="nav-item"><button type="button" class="nav-link" data-bs-toggle="pill" data-bs-target="#tabUp">Sign up</button></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="tabIn">
+            <form id="loginForm">
+              <input name="email" type="email" class="form-control mb-3" placeholder="Email" aria-label="Email" autocomplete="email" required />
+              <input name="password" type="password" class="form-control mb-3" placeholder="Password" aria-label="Password" autocomplete="current-password" required />
+              <p id="loginError" class="text-danger small" role="alert" hidden></p>
+              <button class="btn btn-grad w-100">Login</button>
+            </form>
+            <p class="text-center mt-3 mb-0 small">New here? <a href="#" data-auth-tab="tabUp">Create an account</a></p>
+          </div>
+          <div class="tab-pane fade" id="tabUp">
+            <form id="signupForm">
+              <div class="row g-2">
+                <div class="col-12"><input name="name" type="text" class="form-control" placeholder="Full name" aria-label="Full name" autocomplete="name" required /></div>
+                <div class="col-sm-6"><input name="email" type="email" class="form-control" placeholder="Email" aria-label="Email" autocomplete="email" required /></div>
+                <div class="col-sm-6"><input name="phone" type="tel" class="form-control" placeholder="Phone" aria-label="Phone" autocomplete="tel" required /></div>
+                <div class="col-sm-6"><select name="gender" class="form-select" aria-label="Gender" required><option value="" selected disabled>Gender</option><option>Female</option><option>Male</option></select></div>
+                <div class="col-sm-6"><input name="address" type="text" class="form-control" placeholder="Shipping address" aria-label="Shipping address" autocomplete="street-address" required /></div>
+                <div class="col-sm-6"><input name="password" type="password" class="form-control" placeholder="Password" aria-label="Password" autocomplete="new-password" required /></div>
+                <div class="col-sm-6"><input name="confirm" type="password" class="form-control" placeholder="Confirm password" aria-label="Confirm password" autocomplete="new-password" required /></div>
+              </div>
+              <p id="signupError" class="text-danger small mt-2 mb-0" role="alert" hidden></p>
+              <button class="btn btn-grad w-100 mt-3">Create account</button>
+            </form>
+            <p class="text-center mt-3 mb-0 small">Already registered? <a href="#" data-auth-tab="tabIn">Login</a></p>
+          </div>
+        </div>
+      </div>
+    </div></div></div>
+
+    <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"><div class="modal-content">
+      <div class="modal-header"><h2 class="modal-title fs-5" id="profileTitle">My profile</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+      <div class="modal-body" id="profileBody"></div>
+    </div></div></div>
+
+    <div id="toast" class="toast-msg" role="status" aria-live="polite"></div>
+    <a href="#" id="topBtn" title="Back to top">Top</a>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/core.js"></script>
+    <script src="../js/security.js"></script>
+    <script src="../js/wishlist.js"></script>
+    <script src="../js/reviews.js"></script>
+    <script src="../js/products.js"></script>
+    <script src="../js/orders.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/forms.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

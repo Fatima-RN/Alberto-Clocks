@@ -1,0 +1,38 @@
+/* Accessibility: skip link, keyboard focus, reduced motion */
+.skip-link {
+  position: absolute;
+  top: -70px;
+  left: 12px;
+  z-index: 3000;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: var(--grad);
+  color: #1a1200;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 2px;
+}
+
+main:focus {
+  outline: none;
+}
+
+/* motion off for people who ask their device for less motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
